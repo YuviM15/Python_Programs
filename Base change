@@ -1,0 +1,66 @@
+import math
+s= int(input('Enter number in Base 10:'))
+k= int(input('Change to Base (Greater than 1):'))
+m=int(math.log(s,k))
+p=''
+for i in range (m,-1,-1):
+    t=k**i
+    q=int(s/t)
+    if q==10:
+        q='A'
+    elif q==11:
+        q='B'
+    elif q==12:
+        q='C'
+    elif q==13:
+        q='D'
+    elif q==14:
+        q='E'
+    elif q==15:
+        q='F'
+    elif q==16:
+        q='G'
+    elif q==17:
+        q='H'
+    elif q==18:
+        q='I'
+    elif q==19:
+        q='J'
+    elif q==20:
+        q='K'
+    elif q==21:
+        q='L'
+    elif q==22:
+        q='M'
+    elif q==23:
+        q='N'
+    elif q==24:
+        q='O'
+    elif q==25:
+        q='P'
+    elif q==26:
+        q='Q'
+    elif q==27:
+        q='R'
+    elif q==28:
+        q='S'
+    elif q==29:
+        q='T'
+    elif q==30:
+        q='U'
+    elif q==31:
+        q='V'
+    elif q==32:
+        q='W'
+    elif q==33:
+        q='X'
+    elif q==34:
+        q='Y'
+    elif q==35:
+        q='Z'
+    elif q>35:
+        q= '['+str(q)+']'
+    r=int(s%t)
+    p=p+str(q)
+    s=r
+print(p,'Base',k)
