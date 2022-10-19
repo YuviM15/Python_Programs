@@ -1,1 +1,1 @@
-This repositary contains simple python programs which I found interesting and wrote the code on my own.
+This repositary contains simple python programs which I found interesting and wrote their code on my own.
