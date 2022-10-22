@@ -1,0 +1,12 @@
+a=[3,4,5,1,3,6,7,2,7,5]
+end= len(a)-1
+start= 0
+for i in range (len(a)):
+    mid= int((start+end)/2)
+    if a[mid-1]>a[mid]:
+        end=mid-1
+    elif a[mid+1]>a[mid]:
+        start=mid+1
+    else:
+        print(a[mid])
+        break
