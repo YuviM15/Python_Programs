@@ -1,14 +1,14 @@
 #Define the function whose root you want
 def root(x):
-    y = 3 * x ** 9 + 4 * x ** 3 + 7 * x ** 2 + 9 * x + 8
+    y = 3 * x ** 9 + 6 * x ** 3 + 7 * x ** 2 + 9 * x + 11
     return y
 
 
 # Descartes rule of signs
-for i in range(- 100, 100): #Increase these parameters if it can't find a root
+for i in range(- 100, 100):                             #Increase these parameters if it can't find a root
     m = root(i)
     n = root(i + 1)
-    if m * n < 0 and m != n:
+    if m * n <= 0 :
         a = i
         b = i + 1
 
@@ -23,7 +23,7 @@ try:
     q = float(((a + b)) / 2)
 
     # Newton's Method
-    for j in range(0, 10):
+    for j in range(0, 10):                                 #increase this range to increase the precision
         q = q - ((float(root(q) / float(deri(q)))))
     print('that root is', q)
     print('precision is', 100*(1-root(q)),'%')
