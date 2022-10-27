@@ -26,7 +26,6 @@ try:
     for j in range(0, 100):                                 #increase this range to increase the precision
         q = q - ((float(root(q) / float(deri(q)))))
     print('that root is', q)
-    print(root(q))
     print('precision is', 100*(1-abs(root(q))),'%')
 except:
     print("Can't find a root")
