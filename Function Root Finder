@@ -1,6 +1,6 @@
 #Define the function whose root you want
 def root(x):
-    y = 3 * x ** 9 + 6 * x ** 3 + 7 * x ** 2 + 9 * x + 11
+    y = 3 * x ** 9 + 5* x ** 3 + 8 * x ** 2 + 9 * x + 11
     return y
 
 
@@ -26,6 +26,7 @@ try:
     for j in range(0, 10):                                 #increase this range to increase the precision
         q = q - ((float(root(q) / float(deri(q)))))
     print('that root is', q)
-    print('precision is', 100*(1-root(q)),'%')
+    print(root(q))
+    print('precision is', 100*(1-abs(root(q))),'%')
 except:
     print("Can't find a root")
