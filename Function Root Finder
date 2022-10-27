@@ -23,7 +23,7 @@ try:
     q = float(((a + b)) / 2)
 
     # Newton's Method
-    for j in range(0, 10):                                 #increase this range to increase the precision
+    for j in range(0, 100):                                 #increase this range to increase the precision
         q = q - ((float(root(q) / float(deri(q)))))
     print('that root is', q)
     print(root(q))
