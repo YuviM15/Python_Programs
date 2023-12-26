@@ -1,0 +1,13 @@
+def reverseWords(self, s):
+        s=s.strip()
+        s= s.split()
+        x=[]
+        n=len(s)
+
+        for i in range(n-1,-1,-1):
+            x.append(s[i])
+        s=''
+        for i in range(0,n-1):
+            s= s+ x[i] + ' '
+        s= s+ x[n-1]
+        return s
