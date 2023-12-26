@@ -1,0 +1,20 @@
+nums=[2,5,5,11]
+target=10
+n=len(nums)
+h={}
+for i in range (n):
+    h[nums[i]]=i
+print(h.items())
+for j in range(n):
+    k=target-nums[j]
+    print(k)
+    if h.get(k) != None and h.get(k) !=j :
+        p=[h.get(k),j]
+        break
+print(p)
+
+
+
+
+
+
