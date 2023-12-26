@@ -1,0 +1,8 @@
+def rotate(self, nums, k):
+        n= len(nums)
+        l=[]
+        for i in range (0,n):
+            j=(i-k)%(n)
+            l.append(nums[j])
+        for i in range(0,n):
+            nums[i]=l[i]
