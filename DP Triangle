@@ -1,0 +1,12 @@
+#Given a triangle array, return the minimum path sum from top to bottom.
+
+triangle = [[2],[3,4],[6,5,7],[4,1,8,3]]
+n = len(triangle)
+A=[triangle[n-1]]
+for l in range (n-1): # n is the length, n-1 is the last row, n-2 is the second last row
+    k=[]
+    x=n-l-1
+    for j in range(len(triangle[x])-1):
+        k.append(min(A[l][j],A[l][j+1])+triangle[x-1][j])
+    A.append(k)
+print(A[n-1][0])
