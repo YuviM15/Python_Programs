@@ -1,0 +1,153 @@
+class node:
+    def __init__(self ,data = None, next = None):
+        self.data= data
+        self.next= next
+
+class linked_list:
+    def __init__(self):
+        self.head= None
+
+    def insert_begining(self,data):
+        Node= node(data,self.head)
+        self.head= Node
+    def search_element(self,value):
+        index=0
+        itr=self.head
+        while itr != None and itr.data!=value:
+            index+=1
+            itr=itr.next
+        if itr==None:
+            print("element not found")
+            return
+        print(index)
+    def search_index(self,index):
+        itr=self.head
+        while itr!=None and index>0:
+            itr=itr.next
+            index-=1
+        if itr== None:
+            print('index out of range')
+            return
+        print(itr.data)
+    def insert_end(self,data):
+        if self.head is None:
+            self.head= node(data,None)
+            return
+
+        itr= self.head
+        while itr.next != None:
+            itr=itr.next
+
+        itr.next= node(data,None)
+
+    def print_list(self):
+        if self.head is None:
+            print("list is empty")
+            return
+        itr=self.head
+        while itr != None:
+            print(str(itr.data) + '--->',end='')
+            itr = itr.next
+        print('end')
+    def count_elements(self):
+        count=0
+        itr=self.head
+        while itr != None:
+            count+=1
+            itr=itr.next
+        return count
+    def insert_element(self,data,index):
+        itr= self.head
+        count=0
+        while itr.next != None and count<index :
+            itr=itr.next
+            count+=1
+        itr.next= node(data,itr.next)
+
+    def convert_to_linkedlist(self,l):
+        n=len(l)
+        for i in range(n):
+            self.insert_end(l[i])
+    def convert_to_array(self):
+        l=[]
+        itr=self.head
+        while itr != None:
+            l.append(itr.data)
+            itr=itr.next
+        return l
+    def remove_element(self,value):
+        itr1= self.head
+        itr2= itr1.next
+        while itr1.next!= None and itr2.data!=value :
+            itr1=itr1.next
+            itr2=itr2.next
+        if itr1.next is None:
+            print('invalid element')
+            return
+        itr1.next=itr2.next
+
+    def sort_linkedlist(self):   #selection sort
+        itr1= self.head
+        while itr1!= None:
+            min = itr1.data
+            itr2=itr1
+            while itr2 != None:
+                if itr2.data<= min:
+                    min=itr2.data
+                    c= itr2
+                itr2=itr2.next
+            c.data, itr1.data= itr1.data, c.data
+            itr1= itr1.next
+
+    def invert_linkedlist(self):
+        itr1 =self.head
+        length= self.count_elements()
+        length2=int(length/2)
+        # print(length)
+        itr2=itr1
+        count2=0
+        while itr1.next!=None and count2<length2:
+            # print(itr1.data)
+            count2+=1
+            count=0
+            while itr2.next !=None and count<length-1:
+                itr2=itr2.next
+                count+=1
+                # print(itr2.data)
+            itr2.data,itr1.data = itr1.data,itr2.data
+            length= length -2
+            itr1=itr1.next
+            itr2=itr1
+
+
+
+
+l1= linked_list()
+l1.insert_begining(5)
+l1.insert_begining(8)
+l1.insert_begining(10)
+l1.insert_begining(2)
+l1.insert_end(0)
+l1.insert_element(9,2)
+l1.insert_end(4)
+l1.insert_end(7)
+l1.remove_element(8)
+l1.print_list()
+l1.invert_linkedlist()
+l1.print_list()
+# l1.search_index(2)
+# l1.search_element(2)
+l1.sort_linkedlist()
+l1.print_list()
+# l1.count_elements()
+
+l2= linked_list()
+l=['a','b','c','d']
+l2.convert_to_linkedlist(l)
+l2.print_list()
+print(l1.convert_to_array())
+
+
+
+
+
