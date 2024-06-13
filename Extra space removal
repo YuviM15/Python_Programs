@@ -1,0 +1,27 @@
+s= "a     good   example   "
+b=len(s)
+for i in range (len(s)-1,-1,-1):
+    if s[i] != ' ':
+        e=i+1
+        break
+
+x=''
+for i in range(e-1,0,-1):
+    if s[i] == ' ' and s[i-1] !=' ':
+        b= i+1
+        for j in range(b,e):
+            if s[j] != ' ':
+                x= x+ s[j]
+        e= i
+        x=x+' '
+
+for i in range (0,e):
+    if s[i] != ' ':
+        b=i
+        break
+
+for k in range (b,e):
+    x=x+s[k]
+s=x
+print(s)
+
