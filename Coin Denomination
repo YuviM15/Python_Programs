@@ -1,0 +1,17 @@
+n=18
+a=[1,5,7]
+def mincoin(n,a,h={}):
+    if n==0:
+        return 0
+    min=n+1
+    for i in range(len(a)):
+        if n-a[i]>=0:
+            if n-a[i] not in h:
+                sub= mincoin(n-a[i],a,h)
+                if sub<=min:
+                    min=sub+1
+            else:
+                return h[n-a[i]]
+    return min
+k=mincoin(n,a)
+print(k)
